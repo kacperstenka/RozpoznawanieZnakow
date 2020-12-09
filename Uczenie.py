@@ -29,7 +29,7 @@ labelFile = r"C:\Users\Mati\Desktop\Magisterka SemII\pythonProject3\Nowy folder\
 
 batch_size_val = 50  # how many to process together # Partia
 steps_per_epoch_val =  2000
-epochs_val = 20 #wiek
+epochs_val = 100 #wiek
 imageDimesions = (32, 32, 3)
 testRatio = 0.2  # 20% Zdjęć przeznaczonych jest do testowania
 validationRatio = 0.2  # Pozostałe 20% zdjęć
@@ -155,6 +155,9 @@ dataGen = ImageDataGenerator(width_shift_range=0.1,
                              zoom_range=0.2,  # 0.2 MEANS CAN GO FROM 0.8 TO 1.2
                              shear_range=0.1,  # MAGNITUDE OF SHEAR ANGLE
                              rotation_range=10)  # DEGREES
+
+
+
 dataGen.fit(X_train)
 batches = dataGen.flow(X_train, y_train,
                        batch_size=20)  # REQUESTING DATA GENRATOR TO GENERATE IMAGES  BATCH SIZE = NO. OF IMAGES CREAED EACH TIME ITS CALLED
